@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "509642179905",
+    "firebase_url": "https://medicine-directory-44fc7.firebaseio.com",
+    "project_id": "medicine-directory-44fc7",
+    "storage_bucket": "medicine-directory-44fc7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509642179905:android:e87ae511f9c42f63",
+        "android_client_info": {
+          "package_name": "com.sadiasharmin.medicinedirectory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509642179905-1mpcshleodmp91gq9n5qfs18ff7e3mj6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sadiasharmin.medicinedirectory",
+            "certificate_hash": "79187fcbf63067ac3eaa0f2590b1fd7e31fceeb5"
+          }
+        },
+        {
+          "client_id": "509642179905-jnclq8ekck027gutc6mvss0j8pppin8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI4_c903oAYvsMNxXJuIY3Mu1SZSjfjcI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509642179905-jnclq8ekck027gutc6mvss0j8pppin8d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
