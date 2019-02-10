@@ -1,7 +1,6 @@
 package com.sadiasharmin.medicinedirectory;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -18,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,15 +25,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Stack;
-import java.util.TimeZone;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private ListView categoryListView;
 
 
     @Override
@@ -60,6 +56,20 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        categoryListView = findViewById(R.id.lvCategoryList);
+        categoryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                TextView clickedView = (TextView) view;
+                String categoryName = clickedView.getText().toString();
+
+                SharedDataUtil.CATAGORY_TO_LOAD = categoryName;
+                Intent generic = new Intent(MainActivity.this, GenericNamesActivity.class );
+                startActivity(generic);
+            }
+        });
+
         initFireBase();
 
 /*
@@ -68,17 +78,16 @@ public class MainActivity extends AppCompatActivity
         myRef1.setValue("Hello, World!");*/
     }
 
-    private void initFireBase() {
-        FirebaseDatabase.getInstance().getReference("Category").addValueEventListener(new ValueEventListener() {
+    public void initFireBase() {
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Category");
+
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ArrayList<String> dataFromFirebase = (ArrayList<String>) dataSnapshot.getValue();
                 dataFromFirebase.remove(null);
-
-
-                ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_list_item_1,dataFromFirebase);
-                ListView listView = findViewById(R.id.lvCategoryList);
-                listView.setAdapter(stringArrayAdapter);
+                loadDataOnListView(dataFromFirebase);
             }
 
             @Override
@@ -90,7 +99,14 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    public void loadDataOnListView(ArrayList<String> dataToLoad){
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_list_item_1,dataToLoad);
+
+        categoryListView.setAdapter(stringArrayAdapter);
+    }
+
     public void onButtonClick(View v){
+
 
     }
 
