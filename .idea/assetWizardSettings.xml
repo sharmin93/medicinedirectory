@@ -29,12 +29,24 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                      <entry key="image">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="000000" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                     </map>
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="theme" value="HOLO_DARK" />
-                                      <entry key="themeColor" value="ffffff" />
+                                      <entry key="assetType" value="IMAGE" />
+                                      <entry key="imageAsset" value="D:\android\MedicalDirectory.png" />
+                                      <entry key="themeColor" value="6dfffc" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -74,7 +86,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="scalingPercent" value="73" />
+                                                <entry key="scalingPercent" value="60" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -97,13 +109,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="463549" />
-                                      <entry key="backgroundLayerName" value="ic_launcher_background" />
-                                      <entry key="foregroundImage" value="D:\android\icon.png" />
-                                      <entry key="foregroundLayerName" value="ic_launcher_foreground" />
-                                      <entry key="legacyIconShape" value="NONE" />
-                                      <entry key="outputName" value="app_logo" />
-                                      <entry key="webIconShape" value="NONE" />
+                                      <entry key="backgroundColor" value="a67469" />
+                                      <entry key="foregroundImage" value="D:\Medicalbook.png" />
                                     </map>
                                   </option>
                                 </PersistentState>
